@@ -10,6 +10,19 @@ namespace Methods
     {
         static void Main(string[] args)
         {
+            VisFiler("C:\\temp");
+
+
+        }
+        public static void VisFiler(string mappe)
+        {
+            string[] filer = System.IO.Directory.GetFiles(mappe);
+            foreach (var fil in filer)
+                Console.WriteLine(fil);
+            String[] mapper = System.IO.Directory.GetDirectories(mappe);
+            foreach (var _mappe in mapper)
+                VisFiler(_mappe);
+
         }
     }
 }
